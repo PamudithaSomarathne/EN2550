@@ -1,114 +1,442 @@
-\documentclass[11pt,twocolumn]{article}
+\documentclass[11pt, a4paper]{article}
 
 \usepackage[english]{babel}
 \usepackage{float}
 \usepackage{graphicx}
-\graphicspath{ {./Outputs/} }
-\usepackage[margin=0.45in]{geometry}
+\usepackage[margin=0.3in]{geometry}
 \usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{listings}
 
-\title{{\textbf{EN2550 Fundamentals of Image Processing and Machine Vision\\Assignment 01}}}
-\author{{\Large 180616T P.M.P.H.Somarathne}}
+\title{{\Large \textbf{EN2550 Fundamentals of Image Processing and Machine Vision\\Assignment 01}}}
+\author{{\large 180616T P.M.P.H.Somarathne}}
+\date{full code available at \url{https://github.com/PamudithaSomarathne/EN2550/tree/master/1\%20Basics}}
 
 \begin{document}
 
 \maketitle
 
-\section{Point operations and spatial filtering}
+\section{Basic processing}
+\begin{minipage}{.34\textwidth}
+Here, we'll carry-out the point operations: histogram equalization, intensity windowing, gamma correction and spatial filtering techniques: unsharp masking, Gaussian filtering, median filtering and bilateral filtering on the gray-scale or color image of Sigiriya.
+\end{minipage}
+\hfill
+\begin{minipage}{.64\textwidth}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./a01images/sigiriya.jpg}
+		\caption{{\small \textit{Color image}}}
+		\label{fig:Color Image}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/sigiriya_gray.png}
+		\caption{{\small \textit{Gray-scale image}}}
+		\label{fig:BW Image}
+	\end{subfigure}
+	\caption{Original images}
+\end{figure}
+\end{minipage}
 
+\subsection{Histogram Equalization}
+We equalize the histogram to have a linear cumulative, to get an image with better highlights.
 \begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{sigiriya_gray.png}
-\caption{{\small \textit{Original image}}}
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Histogram.png}
+		\caption{{\small \textit{Histogram of original image}}}
+		\label{fig:Original Histogram}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Equalized_Histogram.png}
+		\caption{{\small \textit{Equalized histogram(blue) and cumulative(Red)}}}
+		\label{fig:Equalized Histogram}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Equalized_Image.png}
+		\caption{{\small \textit{Image after equalizing the histogram}}}
+		\label{fig:Equalized Image}
+	\end{subfigure}
+	\caption{Process of histogram equalization}
 \end{figure}
 
-\subsection{Histogram equalization}
+\subsection{Intensity windowing}
+\begin{minipage}{.4\textwidth}
+In intensity windowing we map each brightness level to a new level using a windowing function like the one shown in fig (\ref{fig:Intensity Windowing}). These can be used to make arbitrary effects like improving a brightness range or highlighting a specific range in the histogram. The transform used here is has a linear curve between the points (0,0)-(100,50), (100,50)-(150,200) and (150,200)-(255,255) 
+\end{minipage}
+\hfill
+\begin{minipage}{.6\textwidth}
 \begin{figure}[H]
-\center
-\includegraphics[width=0.3\textwidth]{Histogram.png}
-\caption{{\small \textit{Histogram of original image}}}
+	\centering
+	\begin{subfigure}[b]{0.39\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Intensity_Transform.png}
+		\caption{{\small \textit{Intensity windowing function}}}
+		\label{fig:Intensity Windowing}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.59\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Intensity_Image.png}
+		\caption{{\small \textit{Image after applying intensity transform}}}
+		\label{fig:Windowed Image}
+	\end{subfigure}
+	\caption{Intensity windowing}
 \end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.3\textwidth]{Equalized_Histogram.png}
-\caption{{\small \textit{Equalized histogram(blue) and cumulative(Red)}}}
-\end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Equalized_Image.png}
-\caption{{\small \textit{Image after equalizing the histogram}}}
-\end{figure}
-
-
-\subsection{Intensity transformations}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.3\textwidth]{Intensity_Transform.png}
-\caption{{\small \textit{Intensity transform function}}}
-\end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Intensity_Image.png}
-\caption{{\small \textit{Image after applying intensity transform}}}
-\end{figure}
-
+\end{minipage}
 
 \subsection{Gamma correction}
+\begin{minipage}{.4\textwidth}
+In gamma correction, brightness levels are given to new values using $g = 255(\frac{f}{255})^{\gamma}$ function. When $\gamma < 1$ the dark pixels are mapped into a larger range while bright pixels are mapped into a smaller range. This has the overall effect of increasing the brightness of the image as most of the pixels get values higher than their previous value. $\gamma > 1$ gives the opposite effect. $\gamma = 1$ is the identity transform. The following image is corrected with $\gamma = 0.5$ and the gamma function calculated for this is shown in fig \ref{fig:Gamma Function}.
+\end{minipage}
+\hfill
+\begin{minipage}{.6\textwidth}
 \begin{figure}[H]
-\center
-\includegraphics[width=0.3\textwidth]{Gamma_correction.png}
-\caption{{\small \textit{Gamma function}}}
+	\centering
+	\begin{subfigure}[b]{0.39\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Gamma_correction.png}
+		\caption{{\small \textit{Gamma function}}}
+		\label{fig:Gamma Function}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.59\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Gamma_Image.png}
+		\caption{{\small \textit{Gamma corrected image}}}
+		\label{fig:Gamma Image}
+	\end{subfigure}
+	\caption{Gamma correction}
 \end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Gamma_Image.png}
-\caption{{\small \textit{Gamma corrected image}}}
-\end{figure}
-
-
-\subsection{Unsharp masking}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Unsharp_Image.png}
-\caption{{\small \textit{Sharpened image}}}
-\end{figure}
-
+\end{minipage}
 
 \subsection{Gaussian filtering}
+\begin{minipage}{.34\textwidth}
+Gaussian filtering is used to remove random Gaussian noise from an image. Here a Gaussian kernel is generated with a given $\sigma$ and convolved with the noisy image. Larger $\sigma$ values can remove more noise but the output will be blurrier. Here we generate a noisy image(fig \ref{fig:Noisy image}) with $\sigma=0.05, \mu=0$ and filter it using the Gaussian kernel(size = 5, $\sigma$ = 2).
+\end{minipage}
+\hfill
+\begin{minipage}{0.64\textwidth}
 \begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Noisy_Image.png}
-\caption{{\small \textit{Noisy image generated for filtering}}}
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Noisy_Image.png}
+		\caption{{\small \textit{Noisy image used for filtering}}}
+		\label{fig:Noisy image}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Gauss_filt_Image.png}
+		\caption{{\small \textit{Image after Gaussian filtering}}}
+		\label{fig:Gaussian Image}
+	\end{subfigure}
+	\caption{Gaussian Filtering}
 \end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Gauss_filt_Image.png}
-\caption{{\small \textit{Image after applying Gaussian filtering}}}
-\end{figure}
+\end{minipage}
+
+\begin{lstlisting}[language=python]
+noise = np.random.normal(mean,sigma,image.shape)*255
+noisy_image = cv.normalize(cv.add(image.astype(np.float),noise),\
+	None, 0, 255, cv.NORM_MINMAX).astype(np.uint8)
+gaussian_kernel = cv.getGaussianKernel(kernel_size, filter_sigma)
+filtered_image = cv.sepFilter2D(noisy_image, -1, gaussian_kernel, gaussian_kernel)
+\end{lstlisting}
+
+\subsection{Unsharp masking}
+Unsharp masking is a method used to sharpen an image. First, a blurred version of the image is taken(ref fig \ref{fig:Unblur Image}, blur size = 5, $\sigma$ = 2) and subtracted from the original image(ref fig \ref{fig:Undiff Image}). The sharpened image is obtained by adding a weighted version the difference image to the original image. The logic behind unsharp masking is that the difference between an image and its blurred version is the sharp content of that image. Therefore, by adding the difference image, we are adding sharp content to the image.
+
+\begin{lstlisting}[language=python]
+blur_kernel = cv.getGaussianKernel(blur_size, blur_sigma)
+blurred_image = cv.sepFilter2D(image, -1, blur_kernel, blur_kernel,\
+	anchor=(-1,-1), delta=0, borderType=cv.BORDER_REPLICATE)
+difference_image = image.astype(np.float32) - blurred_image.astype(np.float32)
+sharpened_image = cv.addWeighted(image.astype(np.float32), 1.0,\
+	difference_image, 0.7, 0).astype(np.uint8)
+\end{lstlisting}
 
 \begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Bilateral_Image.png}
-\caption{{\small \textit{Image after applying bilateral filtering}}}
+	\centering
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/sigiriya_gray.png}
+		\caption{{\small \textit{Original image}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Blurred_Image.png}
+		\caption{{\small \textit{Blurred image}}}
+		\label{fig:Unblur Image}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Difference_Image.png}
+		\caption{{\small \textit{Difference image}}}
+		\label{fig:Undiff Image}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Unsharp_Image.png}
+		\caption{{\small \textit{Sharpened image}}}
+		\label{fig:Unsharp Image}
+	\end{subfigure}
+	\caption{Steps of unsharp masking}
 \end{figure}
-\subsection{Bilateral filtering details}
-
 
 \subsection{Median filtering}
+Median filtering is applied to remove salt-pepper noise which cannot be effectively removed using Gaussian filtering. Median filtering is a non-linear filtering method where each pixel is given the median value from its original image. Since salt-pepper noise dots are outliers in the image, they'll be removed easily. Here, we generate a noisy image with 10\% noise with equal amounts of white and black noise(fig \ref{fig:Salt image}). Then we use a median filter of size 3 to remove this noise effectively.
+\begin{lstlisting}[language=python]
+median_filtered_image = cv.medianBlur(salt_image,median_filter_size)
+\end{lstlisting}
+\begin{center}
+\begin{minipage}{0.8\textwidth}
 \begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Salt_Image.png}
-\caption{{\small \textit{Image with salt-pepper noise}}}
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Salt_Image.png}
+		\caption{{\small \textit{Image with salt-pepper noise}}}
+		\label{fig:Salt image}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Median_filt_Image.png}
+		\caption{{\small \textit{Image after applying median filtering}}}
+		\label{fig:Median Image}
+	\end{subfigure}
+	\caption{Median Filtering}
 \end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=0.25\textwidth]{Median_filt_Image.png}
-\caption{{\small \textit{Image after applying median filtering}}}
-\end{figure}
+\end{minipage}
+\end{center}
 
-\section{Connected component analysis}
+\subsection{Bilateral filtering}
+Bilateral filtering is a non-linear filter used to remove noise from images. It computes the new value of the pixel with a weighted average of its original neighbors. This weights depend no only on the radial distance but also parameters like RGB value, depth etc. Bilateral filtering has little effect on the edges because of this extra parameters. Therefore, the bilateral filtered images are sharper than the Gaussian filtered images.
+\begin{lstlisting}[language=python]
+bilateral_filtered_image = cv.bilateralFilter(noisy_image,\
+	bilateral_filter_size, bilateral_sigma_color, bilateral_sigma_space)
+\end{lstlisting}
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Noisy_Image.png}
+		\caption{{\small \textit{Noisy image generated for filtering}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/Bilateral_Image.png}
+		\caption{{\small \textit{Image after applying bilateral filtering}}}
+		\label{fig:Bilateral Image}
+	\end{subfigure}
+	\caption{Bilateral Filtering}
+\end{figure}
+\end{minipage}
+\end{center}
+
+\section{Counting rice grains in the given image}
+\begin{minipage}{.8\textwidth}
+We have count the number of rice grains in the given figure \ref{fig:Rice image}. First step is to generate a binary image which shows rice grains separate from the background. Next, we apply connected component analysis to detect each rice grain individually. Original image has considerable noise along with uneven lighting. So, the histograms for noise and rice grains overlap and this prevents the use of a simple threshold method to get binary image. Here, we'll take two approaches, one by using techniques mentioned in "part 1" above. Other approach will use an adaptive filter along with the threshold operation.\\
+\end{minipage}
+\hfill
+\begin{minipage}{.18\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.95\textwidth]{./a01images/rice.png}
+	\caption{Rice.png}
+	\label{fig:Rice image}
+\end{figure}
+\end{minipage}
+
+\subsection{Approach 01: Using basic techniques to get the binary image}
+\begin{minipage}{.4\textwidth}
+First, I balanced the uneven lighting condition by adding weights to the darker areas. After brightness adjustment, the brightness levels of all the noise aligned together and levels of all rice grains aligned together. Then it was easier to threshold the image at brightness level 155. After threshold operation, cv.connectedComponents() was used to detect the rice grains individually. This approach detected 99 rice grains. Two pairs of grains have been detected as single grains since they were close in the image and thresholding combined them into one.
+\end{minipage}
+\hfill
+\begin{minipage}{.6\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./Outputs/Rice1.png}
+	\caption{Connected component analysis - approach 1}
+	\label{fig:CCA image1}
+\end{figure}
+\end{minipage}
+
+\begin{lstlisting}[language=python]
+T1,briAdj = np.zeros(256,np.uint8),np.zeros(rice_image.shape,dtype=np.uint8)
+T1[155:] = 255
+for i in range(100): briAdj[i+156,:] = i/1.3
+rice_image = cv.add(rice_image,brightnessAdjust)
+enhanced = T1[rice_image]
+num_labels,labels = cv.connectedComponents(enhanced, connectivity = 4)
+\end{lstlisting}
+
+\subsection{Approach 02: Using adaptive threshold to get the binary image}
+\begin{minipage}{.39\textwidth}
+We can use cv.adaptiveThreshold to get a thresholding along with Gaussian smoothing. The binary image generated using this method detected 101 grains. However, there is a noise dot detected as a grain and two grains have been detected as one. Therefore, even-though the number of grains is correct, the grains have not been detected with 100\% accuracy.
+\end{minipage}
+\hfill
+\begin{minipage}{.59\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./Outputs/Rice2.png}
+	\caption{Connected component analysis - approach 2}
+	\label{fig:CCA image2}
+\end{figure}
+\end{minipage}
+
+\begin{lstlisting}[language=python]
+enhanced_image = cv.adaptiveThreshold(rice_image, 255,\
+	cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 61, -30)
+num_labels2,labels2 = cv.connectedComponents(enhanced_image, connectivity = 4)
+\end{lstlisting}
+
+\subsection{Connected component analysis}
+Connected component analysis from graph theory can be used to detect items separately from a binary image. The algorithm categorizes the pixels and their neighbors with the same value with the same label. Categorization can be done for images with either 4-connectivity or 8-connectivity basis. In 4-connectivity mode, first each pixel is given a label based on its top and left neighbors. Then the labels are merged by considering all 4 neighbors.
 
 \section{Image zooming}
+\subsection{Nearest neighbors}
+In nearest neighbors interpolation, the pixel value of the zoomed image is equal to the pixel that is nearest to it when mapped into the original image. It can be implemented in two ways: taking floor value for non-integer indexes when mapping \& rounding off the non-integer indexes when mapping. These two methods give slightly different results. The code is as follows\\
+\textbf{Floor values as index}
+\begin{lstlisting}[language=python]
+for x in np.arange(scaled_width):
+  for y in np.arange(scaled_height):
+	x_0,y_0 = int(x/scale),int(y/scale)
+	scaled_image[x,y] = image[x_0,y_0]
+\end{lstlisting}
+\textbf{Rounded index}
+\begin{lstlisting}[language=python]
+for x in np.arange(scaled_width):
+  for y in np.arange(scaled_height):
+    x_0,y_0 = np.round(x/scale).astype(int),np.round(y/scale).astype(int)
+	if (x_0==image.shape[0]): x_0 = x_0-1
+    if (y_0==image.shape[1]): y_0 = y_0-1
+	scaled_image[x,y] = image[x_0,y_0]
+\end{lstlisting}
+\subsection{Bi-linear interpolation}
+\begin{minipage}{.6\textwidth}
+In bilinear interpolation, for each pixel the corresponding index in the original image is calculated. If the index is an integer, the pixel value is directly assigned. For non-integer indexes, the pixel value is calculated with bilinear approximation from the four nearest points with integer indexes. If the pixel that need to determined is located at $(x_{i},y_{i})$ and the four nearest integer indexed pixels have coordinates $(x_{0},y_{0}),(x_{0},y_{1}),(x_{1},y_{0}),(x_{1},y_{1})$, then
+\begin{center}
+$Im[x_{i},y_{i}] = (y_{1}-y_{i})[(x_{1}-x_{i})Im[x_{0},y_{0}] + (x_{i}-x_{0})Im[x_{1},y_{0}]]$\\$ + (y_{i}-y_{0})[(x_{1}-x_{i})Im[x_{0},y_{1}] + (x_{i}-x_{0})Im[x_{1},y_{1}]]$
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.4\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Bilinear.png}
+	\caption{Bilinear interpolation vs other interpolation methods \cite{Biwiki}}
+	\label{fig:Bilinear}
+\end{figure}
+\end{minipage}
+\begin{lstlisting}[language=python]
+for x in np.arange(scaled_width):
+  for y in np.arange(scaled_height):
+    x_i,y_i = x/scale,y/scale
+    x_0,y_0 = int(x_i),int(y_i)
+    if (x_i==x_0 and y_i==y_0): scaled_image[x,y] = image[x_0,y_0]
+    else: x_1,y_1 = x_0+1,y_0+1
+      if (x_1==image.shape[0] or y_1==image.shape[1]):
+        scaled_image[x,y] = image[x_0,y_0]
+      else: scaled_image[x,y] =\
+        (y_1-y_i)*((x_1-x_i)*image[x_0,y_0]+(x_i-x_0)*image[x_1,y_0]) +\
+        (y_i-y_0)*((x_1-x_i)*image[x_0,y_1] + (x_i-x_0)*image[x_1,y_1])
+\end{lstlisting}
 
+\subsection{Zooming results}
+First, let's look at the percentage sum of squared difference(SSD\%) of five different implementations.
+\begin{table}[H]
+\begin{tabular}{|l | c | c | c | c | c|}
+\hline
+Image &NN coded(\%) &NN coded with np.round(\%) &Bilinear coded(\%) &cv NN(\%) &cv Bilinear(\%)\\
+\hline
+im01.png &0.21 &0.393 &0.308 &0.21 &0.177\\
+im02.png &0.041 &0.099 &0.075 &0.041 &0.028\\
+im04.png &1.211 &1.531 &1.39 &1.211 &1.204\\
+im05.png &0.44 &0.588 &0.517 &0.44 &0.43\\
+im06.png &0.289 &0.492 &0.393 &0.289 &0.249\\
+im07.png &0.289 &0.413 &0.359 &0.289 &0.282\\
+\hline
+\end{tabular}
+\caption{The SSD\%s of different images when zoomed}
+\end{table}
+The cv implementation for nearest neighbors has same SSD as the nearest neighbors implementation with floor values. The rounded nearest neighbors implementation has highest SSD. Bilinear implementation also has relatively high SSD. The reason for these two errors can be the inability to process the edges correctly. The cv implementation of bilinear interpolation has lowest SSD.\\
+Below are the outputs for the two images with lowest and highest SSD\%s from nearest neighbors implementation with floor value and bilinear implementation. Image 04 has a sharp background in the hi-res image. The zoomed images cannot effectively capture this sharp details and hence have higher errors. When zooming into the NNzoom images, you'll observe large squares of same color generated by the nearest neighbors interpolation. If you zoom into Bizoom images, you'll see the blurred edges due to the averaging done by bilinear interpolation
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./a01images/im02.png}
+		\caption{{\small \textit{Hi-res image}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/nnzoomfloor02.jpg}
+		\caption{{\small \textit{NNzoom image}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/bizoom02.jpg}
+		\caption{{\small \textit{Bizoom image}}}
+	\end{subfigure}
+	\caption{Image 02}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./a01images/im04.png}
+		\caption{{\small \textit{Hi-res image}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/nnzoomfloor04.jpg}
+		\caption{{\small \textit{NNzoom image}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Outputs/bizoom04.jpg}
+		\caption{{\small \textit{Bizoom image}}}
+	\end{subfigure}
+	\caption{Image 04}
+\end{figure}
+\textit{Note: You can zoom these images to view them with finer details.}
+
+\begin{thebibliography}{AA}
+\bibitem{Fwiki}
+Bilateral filter - Wikipedia\\
+\url{https://en.wikipedia.org/wiki/Bilateral_filter}
+
+\bibitem{CCwiki}
+Connected Component Labeling - Wikipedia\\
+\url{https://en.wikipedia.org/wiki/Connected-component_labeling}
+
+\bibitem{Biwiki}
+Bilinear Interpolation - Wikipedia\\
+\url{https://en.wikipedia.org/wiki/Bilinear_interpolation}
+
+\nocite{Fwiki, CCwiki, Biwiki}
+\end{thebibliography}
 
 \end{document}

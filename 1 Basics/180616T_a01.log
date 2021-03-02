@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.21)  25 FEB 2021 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.21)  2 MAR 2021 11:15
 entering extended mode
 **./180616T_a01.tex
 (180616T_a01.tex
@@ -239,46 +239,95 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption3.sty"
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen154
+\captionmargin@=\dimen155
+\captionwidth=\dimen156
+\caption@tempdima=\dimen157
+\caption@indent=\dimen158
+\caption@parindent=\dimen159
+\caption@hangindent=\dimen160
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count269
+\c@continuedfloat=\count270
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\subcaption.sty"
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count271
+\c@subtable=\count272
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.sty"
+\lst@mode=\count273
+\lst@gtempboxa=\box49
+\lst@token=\toks19
+\lst@length=\count274
+\lst@currlwidth=\dimen161
+\lst@column=\count275
+\lst@pos=\count276
+\lst@lostspace=\dimen162
+\lst@width=\dimen163
+\lst@newlines=\count277
+\lst@lineno=\count278
+\lst@maxwidth=\dimen164
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count279
+\lst@skipnumbers=\count280
+\lst@framebox=\box50
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.cfg"
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
 ("C:\Program Files\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdftex.def"
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count269
-\l__pdf_internal_box=\box49
+\l__color_backend_stack_int=\count281
+\l__pdf_internal_box=\box51
 )
 (180616T_a01.aux)
 \openout1 = `180616T_a01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count270
-\scratchdimen=\dimen154
-\scratchbox=\box50
-\nofMPsegments=\count271
-\nofMParguments=\count272
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count273
-\MPscratchDim=\dimen155
-\MPnumerator=\count274
-\makeMPintoPDFobject=\count275
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count282
+\scratchdimen=\dimen165
+\scratchbox=\box52
+\nofMPsegments=\count283
+\nofMParguments=\count284
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count285
+\MPscratchDim=\dimen166
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
+\everyMPtoPDFconversion=\toks21
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -288,37 +337,37 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(32.52127pt, 549.25246pt, 32.52127pt)
-* v-part:(T,H,B)=(32.52127pt, 729.92744pt, 32.52127pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=549.25246pt
-* \textheight=729.92744pt
-* \oddsidemargin=-39.74872pt
-* \evensidemargin=-39.74872pt
-* \topmargin=-76.74872pt
+* h-part:(L,W,R)=(21.68121pt, 554.14545pt, 21.68121pt)
+* v-part:(T,H,B)=(21.68121pt, 801.68442pt, 21.68121pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=554.14545pt
+* \textheight=801.68442pt
+* \oddsidemargin=-50.58878pt
+* \evensidemargin=-50.58878pt
+* \topmargin=-87.58878pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=4.0pt
+* \marginparwidth=50.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumntrue
+* \@twocolumnfalse
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 16.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -328,139 +377,260 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ("C:\Program Files\MiKTeX 2.9\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count276
+\c@section@level=\count288
 )
-LaTeX Info: Redefining \ref on input line 13.
-LaTeX Info: Redefining \pageref on input line 13.
-LaTeX Info: Redefining \nameref on input line 13.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
 
 (180616T_a01.out) (180616T_a01.out)
 \@outlinefile=\write3
 \openout3 = `180616T_a01.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count289
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 16.
+(Font)              <12> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 16.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 16.
-<./Outputs//sigiriya_gray.png, id=43, 634.37pt x 386.44376pt>
-File: ./Outputs//sigiriya_gray.png Graphic file (type png)
-<use ./Outputs//sigiriya_gray.png>
-Package pdftex.def Info: ./Outputs//sigiriya_gray.png  used on input line 21.
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
-<./Outputs//Histogram.png, id=44, 650.43pt x 433.62pt>
-File: ./Outputs//Histogram.png Graphic file (type png)
-<use ./Outputs//Histogram.png>
-Package pdftex.def Info: ./Outputs//Histogram.png  used on input line 28.
-(pdftex.def)             Requested size: 164.7774pt x 109.84712pt.
-<./Outputs//Equalized_Histogram.png, id=46, 650.43pt x 433.62pt>
-File: ./Outputs//Equalized_Histogram.png Graphic file (type png)
-<use ./Outputs//Equalized_Histogram.png>
-Package pdftex.def Info: ./Outputs//Equalized_Histogram.png  used on input line
- 33.
-(pdftex.def)             Requested size: 164.7774pt x 109.84712pt.
-<./Outputs//Equalized_Image.png, id=47, 634.37pt x 386.44376pt>
-File: ./Outputs//Equalized_Image.png Graphic file (type png)
-<use ./Outputs//Equalized_Image.png>
-Package pdftex.def Info: ./Outputs//Equalized_Image.png  used on input line 38.
+(Font)              <6> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 23.
+<./a01images/sigiriya.jpg, id=68, 634.37pt x 386.44376pt>
+File: ./a01images/sigiriya.jpg Graphic file (type jpg)
+<use ./a01images/sigiriya.jpg>
+Package pdftex.def Info: ./a01images/sigiriya.jpg  used on input line 30.
+(pdftex.def)             Requested size: 173.78178pt x 105.86253pt.
+<./Outputs/sigiriya_gray.png, id=69, 634.37pt x 386.44376pt>
+File: ./Outputs/sigiriya_gray.png Graphic file (type png)
+<use ./Outputs/sigiriya_gray.png>
+Package pdftex.def Info: ./Outputs/sigiriya_gray.png  used on input line 37.
+(pdftex.def)             Requested size: 173.78178pt x 105.86253pt.
+<./Outputs/Histogram.png, id=70, 650.43pt x 433.62pt>
+File: ./Outputs/Histogram.png Graphic file (type png)
+<use ./Outputs/Histogram.png>
+Package pdftex.def Info: ./Outputs/Histogram.png  used on input line 51.
+(pdftex.def)             Requested size: 177.3306pt x 118.217pt.
+<./Outputs/Equalized_Histogram.png, id=72, 650.43pt x 433.62pt>
+File: ./Outputs/Equalized_Histogram.png Graphic file (type png)
+<use ./Outputs/Equalized_Histogram.png>
+Package pdftex.def Info: ./Outputs/Equalized_Histogram.png  used on input line 
+58.
+(pdftex.def)             Requested size: 177.3306pt x 118.217pt.
+<./Outputs/Equalized_Image.png, id=73, 634.37pt x 386.44376pt>
+File: ./Outputs/Equalized_Image.png Graphic file (type png)
+<use ./Outputs/Equalized_Image.png>
+Package pdftex.def Info: ./Outputs/Equalized_Image.png  used on input line 65.
+(pdftex.def)             Requested size: 177.3306pt x 108.02661pt.
+<./Outputs/Intensity_Transform.png, id=75, 433.62pt x 433.62pt>
+File: ./Outputs/Intensity_Transform.png Graphic file (type png)
+<use ./Outputs/Intensity_Transform.png>
+Package pdftex.def Info: ./Outputs/Intensity_Transform.png  used on input line 
+82.
+(pdftex.def)             Requested size: 129.67114pt x 129.67017pt.
+<./Outputs/Intensity_Image.png, id=76, 634.37pt x 386.44376pt>
+File: ./Outputs/Intensity_Image.png Graphic file (type png)
+<use ./Outputs/Intensity_Image.png>
+Package pdftex.def Info: ./Outputs/Intensity_Image.png  used on input line 89.
+(pdftex.def)             Requested size: 196.16826pt x 119.50148pt.
 
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 73--96
+$[]$  $[]$ 
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<./Outputs//Intensity_Transform.png, id=48, 433.62pt x 433.62pt>
-File: ./Outputs//Intensity_Transform.png Graphic file (type png)
-<use ./Outputs//Intensity_Transform.png>
-Package pdftex.def Info: ./Outputs//Intensity_Transform.png  used on input line
- 46.
-(pdftex.def)             Requested size: 164.7774pt x 164.77731pt.
-<./Outputs//Intensity_Image.png, id=49, 634.37pt x 386.44376pt>
-File: ./Outputs//Intensity_Image.png Graphic file (type png)
-<use ./Outputs//Intensity_Image.png>
-Package pdftex.def Info: ./Outputs//Intensity_Image.png  used on input line 51.
-
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
-<./Outputs//Gamma_correction.png, id=50, 433.62pt x 433.62pt>
-File: ./Outputs//Gamma_correction.png Graphic file (type png)
-<use ./Outputs//Gamma_correction.png>
-Package pdftex.def Info: ./Outputs//Gamma_correction.png  used on input line 59
+<./Outputs/Gamma_correction.png, id=78, 433.62pt x 433.62pt>
+File: ./Outputs/Gamma_correction.png Graphic file (type png)
+<use ./Outputs/Gamma_correction.png>
+Package pdftex.def Info: ./Outputs/Gamma_correction.png  used on input line 107
 .
-(pdftex.def)             Requested size: 164.7774pt x 164.77731pt.
-<./Outputs//Gamma_Image.png, id=51, 634.37pt x 386.44376pt>
-File: ./Outputs//Gamma_Image.png Graphic file (type png)
-<use ./Outputs//Gamma_Image.png>
-Package pdftex.def Info: ./Outputs//Gamma_Image.png  used on input line 64.
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
+(pdftex.def)             Requested size: 129.67114pt x 129.67017pt.
+<./Outputs/Gamma_Image.png, id=79, 634.37pt x 386.44376pt>
+File: ./Outputs/Gamma_Image.png Graphic file (type png)
+<use ./Outputs/Gamma_Image.png>
+Package pdftex.def Info: ./Outputs/Gamma_Image.png  used on input line 114.
+(pdftex.def)             Requested size: 196.16826pt x 119.50148pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 98--121
+$[]$  $[]$ 
+ []
 
- [1{C:/Users/Pamuditha Somarathne/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex
-.map}
+[1
 
-
- <./Outputs//sigiriya_gray.png (PNG copy)> <./Outputs//Histogram.png> <./Output
-s//Equalized_Histogram.png> <./Outputs//Equalized_Image.png (PNG copy)> <./Outp
-uts//Intensity_Transform.png> <./Outputs//Intensity_Image.png (PNG copy)>]
-<./Outputs//Unsharp_Image.png, id=70, 634.37pt x 386.44376pt>
-File: ./Outputs//Unsharp_Image.png Graphic file (type png)
-<use ./Outputs//Unsharp_Image.png>
-Package pdftex.def Info: ./Outputs//Unsharp_Image.png  used on input line 72.
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
-<./Outputs//Noisy_Image.png, id=71, 634.37pt x 386.44376pt>
-File: ./Outputs//Noisy_Image.png Graphic file (type png)
-<use ./Outputs//Noisy_Image.png>
-Package pdftex.def Info: ./Outputs//Noisy_Image.png  used on input line 80.
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
-<./Outputs//Gauss_filt_Image.png, id=72, 634.37pt x 386.44376pt>
-File: ./Outputs//Gauss_filt_Image.png Graphic file (type png)
-<use ./Outputs//Gauss_filt_Image.png>
-Package pdftex.def Info: ./Outputs//Gauss_filt_Image.png  used on input line 85
+{C:/Users/Pamuditha Somarathne/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.ma
+p} <./a01images/sigiriya.jpg> <./Outputs/sigiriya_gray.png (PNG copy)> <./Outpu
+ts/Histogram.png> <./Outputs/Equalized_Histogram.png> <./Outputs/Equalized_Imag
+e.png (PNG copy)> <./Outputs/Intensity_Transform.png> <./Outputs/Intensity_Imag
+e.png (PNG copy)>]
+<./Outputs/Noisy_Image.png, id=97, 634.37pt x 386.44376pt>
+File: ./Outputs/Noisy_Image.png Graphic file (type png)
+<use ./Outputs/Noisy_Image.png>
+Package pdftex.def Info: ./Outputs/Noisy_Image.png  used on input line 132.
+(pdftex.def)             Requested size: 170.2318pt x 103.69847pt.
+<./Outputs/Gauss_filt_Image.png, id=98, 634.37pt x 386.44376pt>
+File: ./Outputs/Gauss_filt_Image.png Graphic file (type png)
+<use ./Outputs/Gauss_filt_Image.png>
+Package pdftex.def Info: ./Outputs/Gauss_filt_Image.png  used on input line 139
 .
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
+(pdftex.def)             Requested size: 170.2318pt x 103.69847pt.
 
-Underfull \vbox (badness 2980) has occurred while \output is active []
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+49.
 
-<./Outputs//Bilateral_Image.png, id=73, 634.37pt x 386.44376pt>
-File: ./Outputs//Bilateral_Image.png Graphic file (type png)
-<use ./Outputs//Bilateral_Image.png>
-Package pdftex.def Info: ./Outputs//Bilateral_Image.png  used on input line 91.
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 149.
+File: ./Outputs/sigiriya_gray.png Graphic file (type png)
+<use ./Outputs/sigiriya_gray.png>
+Package pdftex.def Info: ./Outputs/sigiriya_gray.png  used on input line 171.
+(pdftex.def)             Requested size: 132.99794pt x 81.01996pt.
+<./Outputs/Blurred_Image.png, id=101, 634.37pt x 386.44376pt>
+File: ./Outputs/Blurred_Image.png Graphic file (type png)
+<use ./Outputs/Blurred_Image.png>
+Package pdftex.def Info: ./Outputs/Blurred_Image.png  used on input line 177.
+(pdftex.def)             Requested size: 132.99794pt x 81.01996pt.
+<./Outputs/Difference_Image.png, id=102, 634.37pt x 386.44376pt>
+File: ./Outputs/Difference_Image.png Graphic file (type png)
+<use ./Outputs/Difference_Image.png>
+Package pdftex.def Info: ./Outputs/Difference_Image.png  used on input line 184
+.
+(pdftex.def)             Requested size: 132.99794pt x 81.01996pt.
+<./Outputs/Unsharp_Image.png, id=103, 634.37pt x 386.44376pt>
+File: ./Outputs/Unsharp_Image.png Graphic file (type png)
+<use ./Outputs/Unsharp_Image.png>
+Package pdftex.def Info: ./Outputs/Unsharp_Image.png  used on input line 191.
+(pdftex.def)             Requested size: 132.99794pt x 81.01996pt.
+ [2 <./Outputs/Gamma_correction.png> <./Outputs/Gamma_Image.png (PNG copy)> <./
+Outputs/Noisy_Image.png (PNG copy)> <./Outputs/Gauss_filt_Image.png (PNG copy)>
+ <./Outputs/Blurred_Image.png (PNG copy)> <./Outputs/Difference_Image.png (PNG 
+copy)> <./Outputs/Unsharp_Image.png (PNG copy)>]
+<./Outputs/Salt_Image.png, id=132, 634.37pt x 386.44376pt>
+File: ./Outputs/Salt_Image.png Graphic file (type png)
+<use ./Outputs/Salt_Image.png>
+Package pdftex.def Info: ./Outputs/Salt_Image.png  used on input line 209.
+(pdftex.def)             Requested size: 199.49176pt x 121.52403pt.
+<./Outputs/Median_filt_Image.png, id=133, 634.37pt x 386.44376pt>
+File: ./Outputs/Median_filt_Image.png Graphic file (type png)
+<use ./Outputs/Median_filt_Image.png>
+Package pdftex.def Info: ./Outputs/Median_filt_Image.png  used on input line 21
+6.
+(pdftex.def)             Requested size: 199.49176pt x 121.52403pt.
+File: ./Outputs/Noisy_Image.png Graphic file (type png)
+<use ./Outputs/Noisy_Image.png>
+Package pdftex.def Info: ./Outputs/Noisy_Image.png  used on input line 237.
+(pdftex.def)             Requested size: 199.49176pt x 121.52403pt.
+<./Outputs/Bilateral_Image.png, id=134, 634.37pt x 386.44376pt>
+File: ./Outputs/Bilateral_Image.png Graphic file (type png)
+<use ./Outputs/Bilateral_Image.png>
+Package pdftex.def Info: ./Outputs/Bilateral_Image.png  used on input line 243.
 
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
-<./Outputs//Salt_Image.png, id=74, 634.37pt x 386.44376pt>
-File: ./Outputs//Salt_Image.png Graphic file (type png)
-<use ./Outputs//Salt_Image.png>
-Package pdftex.def Info: ./Outputs//Salt_Image.png  used on input line 100.
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
-<./Outputs//Median_filt_Image.png, id=75, 634.37pt x 386.44376pt>
-File: ./Outputs//Median_filt_Image.png Graphic file (type png)
-<use ./Outputs//Median_filt_Image.png>
-Package pdftex.def Info: ./Outputs//Median_filt_Image.png  used on input line 1
-05.
-(pdftex.def)             Requested size: 137.31311pt x 83.64397pt.
- [2 <./Outputs//Gamma_correction.png> <./Outputs//Gamma_Image.png (PNG copy)> <
-./Outputs//Unsharp_Image.png (PNG copy)> <./Outputs//Noisy_Image.png (PNG copy)
-> <./Outputs//Gauss_filt_Image.png (PNG copy)> <./Outputs//Bilateral_Image.png 
-(PNG copy)> <./Outputs//Salt_Image.png (PNG copy)> <./Outputs//Median_filt_Imag
-e.png (PNG copy)>] (180616T_a01.aux)
+(pdftex.def)             Requested size: 199.49176pt x 121.52403pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+<./a01images/rice.png, id=136, 256.96pt x 256.96pt>
+File: ./a01images/rice.png Graphic file (type png)
+<use ./a01images/rice.png>
+Package pdftex.def Info: ./a01images/rice.png  used on input line 260.
+(pdftex.def)             Requested size: 94.7547pt x 94.7561pt.
+<./Outputs/Rice1.png, id=137, 1069.9975pt x 1069.9975pt>
+File: ./Outputs/Rice1.png Graphic file (type png)
+<use ./Outputs/Rice1.png>
+Package pdftex.def Info: ./Outputs/Rice1.png  used on input line 274.
+(pdftex.def)             Requested size: 332.49065pt x 332.4958pt.
+
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 267--279
+$[]$  $[]$ 
+ []
+
+[3 <./Outputs/Salt_Image.png (PNG copy)> <./Outputs/Median_filt_Image.png (PNG 
+copy)> <./Outputs/Bilateral_Image.png (PNG copy)> <./a01images/rice.png (PNG co
+py)>]
+<./Outputs/Rice2.png, id=150, 683.55376pt x 341.275pt>
+File: ./Outputs/Rice2.png Graphic file (type png)
+<use ./Outputs/Rice2.png>
+Package pdftex.def Info: ./Outputs/Rice2.png  used on input line 297.
+(pdftex.def)             Requested size: 326.94377pt x 163.2321pt.
+ [4 <./Outputs/Rice1.png> <./Outputs/Rice2.png>]
+<Bilinear.png, id=170, 840.13875pt x 515.9275pt>
+File: Bilinear.png Graphic file (type png)
+<use Bilinear.png>
+Package pdftex.def Info: Bilinear.png  used on input line 342.
+(pdftex.def)             Requested size: 221.65479pt x 136.11395pt.
+
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 332--347
+$[]$  $[]$ 
+ []
+
+[5 <./Bilinear.png>]
+<./a01images/im02.png, id=204, 1927.2pt x 1204.5pt>
+File: ./a01images/im02.png Graphic file (type png)
+<use ./a01images/im02.png>
+Package pdftex.def Info: ./a01images/im02.png  used on input line 385.
+(pdftex.def)             Requested size: 166.24532pt x 103.89742pt.
+<./Outputs/nnzoomfloor02.jpg, id=205, 1927.2pt x 1204.5pt>
+File: ./Outputs/nnzoomfloor02.jpg Graphic file (type jpg)
+<use ./Outputs/nnzoomfloor02.jpg>
+Package pdftex.def Info: ./Outputs/nnzoomfloor02.jpg  used on input line 391.
+(pdftex.def)             Requested size: 166.24532pt x 103.89742pt.
+<./Outputs/bizoom02.jpg, id=206, 1927.2pt x 1204.5pt>
+File: ./Outputs/bizoom02.jpg Graphic file (type jpg)
+<use ./Outputs/bizoom02.jpg>
+Package pdftex.def Info: ./Outputs/bizoom02.jpg  used on input line 397.
+(pdftex.def)             Requested size: 166.24532pt x 103.89742pt.
+<./a01images/im04.png, id=207, 3854.4pt x 2168.1pt>
+File: ./a01images/im04.png Graphic file (type png)
+<use ./a01images/im04.png>
+Package pdftex.def Info: ./a01images/im04.png  used on input line 407.
+(pdftex.def)             Requested size: 166.24532pt x 93.49113pt.
+<./Outputs/nnzoomfloor04.jpg, id=208, 3854.4pt x 2168.1pt>
+File: ./Outputs/nnzoomfloor04.jpg Graphic file (type jpg)
+<use ./Outputs/nnzoomfloor04.jpg>
+Package pdftex.def Info: ./Outputs/nnzoomfloor04.jpg  used on input line 413.
+(pdftex.def)             Requested size: 166.24532pt x 93.49113pt.
+<./Outputs/bizoom04.jpg, id=209, 3854.4pt x 2168.1pt>
+File: ./Outputs/bizoom04.jpg Graphic file (type jpg)
+<use ./Outputs/bizoom04.jpg>
+Package pdftex.def Info: ./Outputs/bizoom04.jpg  used on input line 419.
+(pdftex.def)             Requested size: 166.24532pt x 93.49113pt.
+ [6 <./a01images/im02.png (PNG copy)> <./Outputs/nnzoomfloor02.jpg> <./Outputs/
+bizoom02.jpg> <./a01images/im04.png (PNG copy)> <./Outputs/nnzoomfloor04.jpg> <
+./Outputs/bizoom04.jpg>] (180616T_a01.aux)
 Package rerunfilecheck Info: File `180616T_a01.out' has not changed.
-(rerunfilecheck)             Checksum: C07985114DDBAB3B66B41420BEE0F71B;1664.
+(rerunfilecheck)             Checksum: 055F648BE203FF34B34B3B909CB61EA7;2971.
  ) 
 Here is how much of TeX's memory you used:
- 9115 strings out of 479375
- 135677 string characters out of 2866541
- 456299 words of memory out of 3000000
- 26388 multiletter control sequences out of 15000+200000
- 408330 words of font info for 43 fonts, out of 3000000 for 9000
+ 12435 strings out of 479375
+ 188360 string characters out of 2866541
+ 724804 words of memory out of 3000000
+ 29593 multiletter control sequences out of 15000+200000
+ 409971 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,8n,74p,293b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ 71i,9n,74p,661b,1443s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Pamuditha Somarathne\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on 180616T_a01.pdf (2 pages, 1945859 bytes).
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmtt12.pfb>
+Output written on 180616T_a01.pdf (6 pages, 30790086 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 264 words of extra memory for PDF output out of 10000 (max. 10000000)
 
