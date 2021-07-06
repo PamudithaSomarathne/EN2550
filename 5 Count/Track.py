@@ -36,7 +36,7 @@ template_im = cv.imread(r'template.png', cv.IMREAD_GRAYSCALE)
 th_t, img_t = cv.threshold(template_im, 0, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
 kernel = np.ones((3,3), dtype=np.uint8)
 closing_t = cv.morphologyEx(img_t, cv.MORPH_CLOSE, kernel)
-contours_t, hierarchy_t = cv.findContours(closing_t, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+contours_t, hierarchy_t = cv.findContours(closing_t, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
 # Read the video
 print("Reading video")
@@ -62,13 +62,13 @@ contour_store = []
 matching_threshold = 4.5e-3
 for grey in frames:
   retval, labels, stats, centroids = get_indexed_image(grey)
-  contours, hierarchy = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+  contours, hierarchy = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
   frame_objects = []
   conts = []
   for i in range(len(contours)):
     if cv.matchShapes(contours_t[0], contours[i], cv.CONTOURS_MATCH_I1, 0.0) > matching_threshold: continue
     ca = int(cv.contourArea(contours[i]))
-    if ca<59500: continue
+    #if ca<59500: continue
     M = cv.moments(contours[i])
     cx, cy = int(M['m10']/M['m00']), int(M['m01']/M['m00'])
     frame_objects.append([cx, cy, ca, i+1])

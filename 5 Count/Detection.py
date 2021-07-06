@@ -22,7 +22,7 @@ def is_new(a, b, delta, i):
 
 template_im = cv.imread(r'template.png', cv.IMREAD_GRAYSCALE)
 retval, labels, stats, centroids = get_indexed_image(template_im)
-contours_t, hierarchy_t = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+contours_t, hierarchy_t = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
 frames = []
 cap = cv.VideoCapture('conveyor_with_rotation.mp4') # give the correct path here
@@ -40,7 +40,7 @@ object_flow = []
 matching_threshold = 0.00018
 for grey in frames:
   retval, labels, stats, centroids = get_indexed_image(grey)
-  contours, hierarchy = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+  contours, hierarchy = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
   frame_objects = []
   for i in range(len(contours)):
     if cv.matchShapes(contours_t[0], contours[i], cv.CONTOURS_MATCH_I1, 0.0) > matching_threshold: continue
