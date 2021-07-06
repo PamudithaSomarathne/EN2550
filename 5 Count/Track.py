@@ -58,11 +58,13 @@ print("Frames shape:", frames.shape)
 # Generate object flow
 print("Generating object flow")
 object_flow = []
+contour_store = []
 matching_threshold = 4.5e-3
 for grey in frames:
   retval, labels, stats, centroids = get_indexed_image(grey)
   contours, hierarchy = cv.findContours(((labels >= 1)*255).astype('uint8'), cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
   frame_objects = []
+  conts = []
   for i in range(len(contours)):
     if cv.matchShapes(contours_t[0], contours[i], cv.CONTOURS_MATCH_I1, 0.0) > matching_threshold: continue
     ca = int(cv.contourArea(contours[i]))
@@ -70,7 +72,9 @@ for grey in frames:
     M = cv.moments(contours[i])
     cx, cy = int(M['m10']/M['m00']), int(M['m01']/M['m00'])
     frame_objects.append([cx, cy, ca, i+1])
+    conts.append(contours[i])
   frame_objects = np.array(frame_objects)
+  contour_store.append(conts)
   object_flow.append(frame_objects)
 
 # Track the nut and assign identification number
@@ -95,6 +99,7 @@ for i in range(len(frames)):
   for obj in object_flow[i]:
     frame = cv.putText(frame, str(int(obj[3])), (int(obj[0]), int(obj[1])), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
     frame = cv.putText(frame, '180616T', (20, 1060), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
+  frame = cv.drawContours(frame, contour_store[i], -1, (0, 0, 255), 3).astype(np.uint8)
 
 # Encoding the frames
 print("Encoding")
