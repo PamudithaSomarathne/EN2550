@@ -99,7 +99,7 @@ for i in range(len(frames)):
   for obj in object_flow[i]:
     frame = cv.putText(frame, str(int(obj[3])), (int(obj[0]), int(obj[1])), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
     frame = cv.putText(frame, '180616T', (20, 1060), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
-  frame = cv.drawContours(frame, contour_store[i], -1, (0, 0, 255), 3).astype(np.uint8)
+  frame = cv.drawContours(frame, contour_store[i], -1, (0, 255, 0), 5).astype(np.uint8)
 
 # Encoding the frames
 print("Encoding")
