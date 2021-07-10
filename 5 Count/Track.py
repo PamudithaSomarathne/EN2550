@@ -73,7 +73,7 @@ for grey in frames:
     cx, cy = int(M['m10']/M['m00']), int(M['m01']/M['m00'])
     frame_objects.append([cx, cy, ca, i+1])
     conts.append(contours[i])
-  frame_objects = np.array(frame_objects)
+  frame_objects = np.array(frame_objects, dtype=np.int32)
   contour_store.append(conts)
   object_flow.append(frame_objects)
 
@@ -96,8 +96,12 @@ print("Detected", obj_count, "nuts in the video")
 print("Adding text")
 for i in range(len(frames)):
   frame = col_frames[i]
+  frame = cv.putText(frame, 'Frame '+str(i+1), (20, 810), cv.FONT_HERSHEY_SIMPLEX, 2, (0,255,0), 2)
+  pos = 860
   for obj in object_flow[i]:
-    frame = cv.putText(frame, str(int(obj[3])), (int(obj[0]), int(obj[1])), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
+    frame = cv.putText(frame, str(obj[3]), (obj[0], obj[1]), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
+    frame = cv.putText(frame, 'Object '+str(obj[3])+': '+str(obj[0])+' '+str(obj[1])+' '+str(obj[2]), (20, pos), cv.FONT_HERSHEY_SIMPLEX, 2, (125,0,125), 2)
+    pos+=50
     frame = cv.putText(frame, '180616T', (20, 1060), cv.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 2)
   frame = cv.drawContours(frame, contour_store[i], -1, (0, 255, 0), 5).astype(np.uint8)
 
